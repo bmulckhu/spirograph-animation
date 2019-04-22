@@ -8,15 +8,15 @@ myGraph2.strokeColor = 'black';
 
 var toggleEnable = true;
 var pass = 0;
-var spiroName = ""; 
+var spiroName = "";
 
- 
+
 function toggleAnimation(){
   if (toggleEnable){
     toggleEnable = false;
     myGraph2.simplify(1); // default 2.5 - lower = more exact and more nodes
     myGraph2.fullySelected = true; // just to notify the viewer
-  }else{
+  } else {
     // toggleEnable = true;  starting to draw again will destroy the graph
   }
 }
@@ -48,18 +48,18 @@ function onFrame(event) {
         myGraph2.closed = true
         toggleAnimation()
       }
-      
+
       if (spiroName==""){
           spiroName = "spiro_"+R+"_"+r+"_"+O
       }
-    }  
+    }
 }
 
 //currently name doesn't seem to work in some browsers.
 //Save SVG from paper.js as a file.
 var downloadAsSVG = function (fileName) {
 
-   if(!fileName) {
+   if (!fileName) {
        fileName = "paperjs_example.svg"
    }
 
@@ -74,5 +74,5 @@ var downloadAsSVG = function (fileName) {
 function onKeyDown(event) {
  if(event.character == "P") {
            downloadAsSVG(spiroName);
-       }   
+       }
 }
